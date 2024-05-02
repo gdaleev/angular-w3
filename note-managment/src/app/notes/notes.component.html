@@ -1,8 +1,12 @@
 <div class="notes-container">
   <ul *ngIf="notesArray.length > 0" class="notes-list">
-    <li *ngFor="let note of notesArray" class="note-item">
+    <li (click)="showButtons()" *ngFor="let note of notesArray; let i = index" class="note-item">
       <strong>{{ note.title }}</strong>
       <p>{{ note.content }}</p>
+      <div *ngIf="listItemClicked" class="li-btns">
+        <button (click)="deleteNote(i)" class="delete-btn">изтрий</button>
+        <button (click)="editNote(i)" class="edit-btn">редакция</button>
+      </div>
     </li>
   </ul>
 </div>

@@ -15,6 +15,12 @@
     <button (click)="addNote()" class="store-btn">СЪХРАНИ БЕЛЕЖКАТА</button>
   </div>
   <div class="child2">
-    <app-notes [notesArray]="notesArray"></app-notes>
+    <app-notes
+      (childValuesEvent)="onChildValuesEvent($event)"
+      [notesArray]="notesArray"
+      [editModeOn]="editModeOn"
+      [index]="index"
+      #notesComponent
+    ></app-notes>
   </div>
 </div>
