@@ -13,3 +13,15 @@
   flex: 1;
   padding-left: 10px;
 }
+
+.error {
+  color: red;
+}
+
+.error-border {
+  border-color: red;
+  color: red;
+}
+
+
+

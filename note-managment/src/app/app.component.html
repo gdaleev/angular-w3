@@ -1,17 +1,25 @@
 <div class="parent">
-  <div class="child1">
+  <div class="child1" [class.error]="(title.length < 5 || content.length < 7) && (title.trim().length > 0 || content.trim().length > 0)">
     <input
       type="text"
       [(ngModel)]="title"
       class="title-input"
+      [class.error-border]="title.length < 5 && title.trim().length > 0"
       placeholder="заглавие на бележката"
     /><br />
+    <div *ngIf="title.length < 5 && title.trim().length > 0" class="error">
+      минимално количество символи 5
+    </div>
     <textarea
       class="content-input"
       [(ngModel)]="content"
+      [class.error-border]="content.length < 7 && content.trim().length > 0"
       placeholder="съдържание на бележката"
     ></textarea
     ><br />
+    <div *ngIf="content.length < 7 && content.trim().length > 0" class="error">
+      минимално количество символи 7
+    </div>
     <button (click)="addNote()" class="store-btn">СЪХРАНИ БЕЛЕЖКАТА</button>
   </div>
   <div class="child2">

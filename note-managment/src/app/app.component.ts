@@ -20,7 +20,7 @@ export class AppComponent implements AfterViewInit{
   index = 0;
 
   ngAfterViewInit() {
-    this.index = this.notesComponent.index; // Move index assignment to ngAfterViewInit
+    this.index = this.notesComponent.index;
     this.editModeOn = this.notesComponent.editModeOn;
   }
 
@@ -31,7 +31,6 @@ export class AppComponent implements AfterViewInit{
       this.updateNote();
     } else {
       this.notesArray.push({ title: this.title, content: this.content });
-      // console.log(this.notesArray);
       this.title = '';
       this.content = '';
       this.notesComponent.listItemClicked = false;
@@ -52,5 +51,4 @@ export class AppComponent implements AfterViewInit{
     this.editModeOn = !!values.editMode;
     this.index = values.index || 0;
   }
-
 }
