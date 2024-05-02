@@ -1,0 +1,15 @@
+.parent {
+  display: flex;
+}
+
+.child1 {
+  flex: 1;
+  padding-right: 10px;
+  border-right: 1px solid #ccc;
+  text-align: right;
+}
+
+.child2 {
+  flex: 1;
+  padding-left: 10px;
+}
