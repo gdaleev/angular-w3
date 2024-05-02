@@ -1,0 +1,14 @@
+.notes-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.note-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.note-item p {
+  margin: 0;
+}

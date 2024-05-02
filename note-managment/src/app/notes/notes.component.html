@@ -1,1 +1,8 @@
-<p>notes works!</p>
+<div class="notes-container">
+  <ul *ngIf="notesArray.length > 0" class="notes-list">
+    <li *ngFor="let note of notesArray" class="note-item">
+      <strong>{{ note.title }}</strong>
+      <p>{{ note.content }}</p>
+    </li>
+  </ul>
+</div>

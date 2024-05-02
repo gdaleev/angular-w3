@@ -2,15 +2,19 @@
   <div class="child1">
     <input
       type="text"
+      [(ngModel)]="title"
       class="title-input"
       placeholder="заглавие на бележката"
     /><br />
     <textarea
-      id="content-input"
+      class="content-input"
+      [(ngModel)]="content"
       placeholder="съдържание на бележката"
     ></textarea
     ><br />
-    <button type="submit" class="store-btn">СЪХРАНИ БЕЛЕЖКАТА</button>
+    <button (click)="addNote()" class="store-btn">СЪХРАНИ БЕЛЕЖКАТА</button>
   </div>
-  <div class="child2"><app-notes></app-notes></div>
+  <div class="child2">
+    <app-notes [notesArray]="notesArray"></app-notes>
+  </div>
 </div>
